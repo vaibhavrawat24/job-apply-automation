@@ -22,6 +22,6 @@ def is_junior(job):
     years = extract_years(job.get("description", ""))
 
     if years is None:
-        return True   # assume junior if unspecified
+        return True  
 
     return years <= 2

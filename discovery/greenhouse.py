@@ -14,7 +14,6 @@ def fetch_greenhouse(board):
 
         data = res.json()
 
-        # ⭐ CRITICAL LINE
         jobs = data.get("jobs", [])
 
         print("Fetched:", len(jobs), "jobs from", board)
