@@ -17,6 +17,7 @@ EXCLUDE_KEYWORDS = [
     "university grad",
     "intern",
     "internship",
+    "android",
 ]
 
 def is_relevant(job):
