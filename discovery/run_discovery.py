@@ -1,13 +1,12 @@
 from discovery.greenhouse import fetch_greenhouse
 from discovery.lever import fetch_lever
 from discovery.ashby import fetch_ashby
-
+from discovery.workable import fetch_workable
 
 GREENHOUSE_BOARDS = ["airtable", "stripe"]
 LEVER_BOARDS = ["welocalize","meesho"]
-ASHBY_BOARDS = [
-    "perplexity",
-]
+ASHBY_BOARDS = ["perplexity"]
+WORKABLE = ["pandadoc","lyst", "testgorilla"]
 
 def run():
     all_jobs = []
@@ -23,6 +22,10 @@ def run():
     for a in ASHBY_BOARDS:
         print("Checking ashby:", a)
         all_jobs.extend(fetch_ashby(a))
+
+    for w in WORKABLE:
+        print("Checking workable:", w)
+        all_jobs.extend(fetch_workable(w))
 
     print("TOTAL JOBS:", len(all_jobs))
     return all_jobs
